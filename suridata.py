@@ -5,7 +5,7 @@ from typing import Optional, Dict
 
 
 class CreateGame:
-    def __init__(self, employees_list: list, workers: int = cpu_count):
+    def __init__(self, employees_list: list, workers: int = cpu_count()):
         self._employees = employees_list
         self.employee_tuples: Optional[list] = None
         self.validate_employees()
@@ -28,7 +28,6 @@ class CreateGame:
                 employee[field] = employee[field].lower()
         self.employee_tuples = list(set(tuple(employee.values()) for employee in self._employees))
 
-    @staticmethod
     def validate_giant(self, dwarf: tuple, giant: tuple, results: dict) -> bool:
         """
         Validate that the giant and the dwarf can be paired and that they're not crossing any of the game rules
